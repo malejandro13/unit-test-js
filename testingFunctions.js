@@ -3,23 +3,23 @@
 const Test = { name: '[object Test]' };
 
 Test.expect = (result) => {
-	return {
-		toBe(expected) {
-			if(result !== expected) {
-				throw new Error(`${result} is not equal to ${expected} 😕`)
-			}
+  return {
+    toBe(expected) {
+      if(result !== expected) {
+        throw new Error(`${result} is not equal to ${expected} 😕`)
+      }
     },
     toBeTruthy() {
-			if(result !== true) {
-				throw new Error(`Expected to receive true, but receives ${result} 😕`)
-			}
+      if(result !== true) {
+        throw new Error(`Expected to receive true, but receives ${result} 😕`)
+      }
     },
     toBeFalsy() {
-			if(result !== false) {
-				throw new Error(`Expected to receive false, but receives ${result} 😕`)
-			}
-		}
-	}
+     if(result !== false) {
+       throw new Error(`Expected to receive false, but receives ${result} 😕`)
+     }
+    } 
+  }
 };
 
 Test.test = Test.it = (title, callback) => {
